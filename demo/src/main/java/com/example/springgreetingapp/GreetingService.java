@@ -30,5 +30,10 @@ public GreetingInfo save(String message){
     }
 //UC5 Completed
 
-  
+    //for UC6
+    public List<GreetingInfo> getAllGreetings() {
+        return new ArrayList<>(greetingMap.values());
+    }
+    //UC6 Completed
+
 }

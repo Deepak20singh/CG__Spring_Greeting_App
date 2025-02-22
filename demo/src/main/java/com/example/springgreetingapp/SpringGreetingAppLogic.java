@@ -67,5 +67,12 @@ public GreetingInfo byid(@PathVariable Long id){
     }
 //UC5 completed
 
+    //for UC6
+    @GetMapping("/list")
+    public List<GreetingInfo> getAllGreetings() {
+        return greetingService.getAllGreetings();
+    }
+    //UC6 Completed
+
   
 }
