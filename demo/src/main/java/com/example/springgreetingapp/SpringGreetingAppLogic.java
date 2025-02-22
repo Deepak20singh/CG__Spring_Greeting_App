@@ -55,5 +55,17 @@ public class SpringGreetingAppLogic {
         return greetingService.save(message);
     }
     //UC4 Completed
- 
+//for UC5
+    @GetMapping("/find/{id}")
+public GreetingInfo byid(@PathVariable Long id){
+        GreetingInfo greeting=greetingService.search(id);
+        if(greeting!=null){
+            return greeting;
+        }else {
+            return new GreetingInfo(-1l,"Result not Found");
+        }
+    }
+//UC5 completed
+
+  
 }
