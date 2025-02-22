@@ -86,5 +86,14 @@ public GreetingInfo byid(@PathVariable Long id){
     }
     //UC7 Completed
 
-   
+    //for UC8
+    @DeleteMapping("/delete/{id}")
+    public String deleteGreeting(@PathVariable Long id) {
+        boolean isDeleted = greetingService.deleteGreeting(id);
+        if (isDeleted) {
+            return "Greeting with ID " + id + " deleted successfully.";
+        } else {
+            return "Greeting ID " + id + " not found.";
+        }
+    }
 }
