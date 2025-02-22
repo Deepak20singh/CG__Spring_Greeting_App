@@ -3,6 +3,8 @@ package com.example.springgreetingapp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/request")
@@ -48,6 +50,10 @@ public class SpringGreetingAppLogic {
     }
 
     //UC3 Completed
-
-
+    @PostMapping("/save")
+    public GreetingInfo saveGreeting(@RequestBody String message) {
+        return greetingService.save(message);
+    }
+    //UC4 Completed
+ 
 }
