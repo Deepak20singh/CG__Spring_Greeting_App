@@ -42,7 +42,12 @@ public class SpringGreetingAppLogic {
 
     //UC2 Completed
 
-   
+    @GetMapping("/name")
+    public String name(@RequestParam(value = "name", defaultValue = "World")String name){
+        return "Hello "+name+"!";
+    }
+
+    //UC3 Completed
 
 
 }
