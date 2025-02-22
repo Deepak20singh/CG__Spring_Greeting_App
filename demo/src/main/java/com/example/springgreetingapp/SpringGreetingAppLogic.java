@@ -28,7 +28,21 @@ public class SpringGreetingAppLogic {
     }
     //UC1 completed
 
- 
+    private final GreetingService greetingService;
+
+
+    @GetMapping("/")
+    public String message(){
+        return greetingService.getGreeting();
+    }
+    @Autowired
+    public SpringGreetingAppLogic(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
+
+    //UC2 Completed
+
+   
 
 
 }
